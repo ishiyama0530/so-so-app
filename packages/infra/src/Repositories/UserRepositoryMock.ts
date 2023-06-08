@@ -12,7 +12,7 @@ export class UserRepositoryMock implements UserRepository {
       new UserEntity('id', 'xxx@xxx.xx', 'password')
     ])
   }
-  findById(id: string): Promise<UserEntity | null> {
+  public findById(id: string): Promise<UserEntity | null> {
     return Promise.resolve(new UserEntity(id, 'xxx@xxx.xx', 'password'))
   }
   public findByEmail(email: string): Promise<UserEntity | null> {
