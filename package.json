@@ -1,0 +1,30 @@
+{
+  "name": "so-so-webapp",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "scripts": {
+    "build": "tsc --build",
+    "clean": "rm -rf */**/{dist,node_modules,*.tsbuildinfo} && rm -rf node_modules",
+    "fmt": "prettier -w 'packages' 'apps'"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "devDependencies": {
+    "prettier": "^2.8.8",
+    "typescript": "^5.1.3"
+  },
+  "engines": {
+    "npm": ">=8.19.3",
+    "pnpm": "forbidden, use npm",
+    "yarn": "forbidden, use npm",
+    "node": ">=18.13.0"
+  },
+  "volta": {
+    "node": "18.13.0"
+  }
+}
