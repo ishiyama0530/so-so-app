@@ -9,4 +9,4 @@ export const container = new Container()
 container.bind<interfaces.Controller>('AppController').to(AppController)
 
 container.bind<UserRepository>(TYPES.DOMAINS.USER_REPOSITORY).to(UserRepositoryMock)
-container.bind(TYPES.APPLICATIONS.HISTORY_GET_ALL_INTERACTOR).to(UserGetAllInteractor)
+container.bind(TYPES.APPLICATIONS.USER_GET_ALL_INTERACTOR).to(UserGetAllInteractor)

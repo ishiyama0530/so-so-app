@@ -12,6 +12,7 @@
   "dependencies": {
     "@soso/shared": "^1.0.0",
     "inversify": "^6.0.1",
-    "reflect-metadata": "^0.1.13"
+    "reflect-metadata": "^0.1.13",
+    "zod": "^3.21.4"
   }
 }
