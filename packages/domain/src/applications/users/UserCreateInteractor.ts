@@ -21,16 +21,14 @@ export class UserCreateInteractor {
     }
 
     const newUserId = Math.random().toString(32).substring(2)
-    await this.userRepository.createUser({
-      userId: newUserId,
-      ...input
-    })
+    const newUser = new UserEntity(newUserId, input.email, input.password)
+    await this.userRepository.createUser(newUser)
 
     const history = new HistoryEntity('id', 'created user.', 'user_id', new Date())
     await this.historyRepository.createHistory(history)
 
-    const newUser = await this.userRepository.findById(newUserId)
-    if (!newUser) {
+    const createdUser = await this.userRepository.findById(newUserId)
+    if (!createdUser) {
       throw new HttpError(500, 'Failed to process')
     }
 
